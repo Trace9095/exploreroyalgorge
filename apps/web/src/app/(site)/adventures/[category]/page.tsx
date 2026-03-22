@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { BUSINESSES, getBusinessesByCategory } from '@/data/businesses'
 import { CATEGORY_LABELS } from '@erg/shared'
 import type { BusinessCategory } from '@erg/shared'
-import { ArrowRight, Globe, Phone, CheckCircle, MapPin, Star, ArrowLeft } from 'lucide-react'
+import { ArrowRight, Globe, Phone, CheckCircle, MapPin, Award, ArrowLeft } from 'lucide-react'
 import { BookDirectBanner } from '@/components/marketing/BookDirectBanner'
 
 const ALL_CATEGORIES = Object.keys(CATEGORY_LABELS) as BusinessCategory[]
@@ -81,13 +81,13 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 
               <div className="relative space-y-3">
                 <div className="flex flex-wrap items-center gap-2">
-                  {business.tier === 'sponsored' && (
+                  {business.ownedByTrace && (
                     <span className="inline-flex items-center gap-1 rounded-full border border-gold/40 bg-gold/15 px-2.5 py-0.5 text-xs font-semibold text-gold">
-                      <Star className="h-2.5 w-2.5 fill-gold" aria-hidden="true" />
-                      Sponsored
+                      <Award className="h-2.5 w-2.5" aria-hidden="true" />
+                      Featured Partner
                     </span>
                   )}
-                  {business.tier === 'premium' && (
+                  {business.tier === 'premium' && !business.ownedByTrace && (
                     <span className="rounded-full border border-gold/20 bg-gold/10 px-2.5 py-0.5 text-xs font-medium text-gold/80">
                       Premium
                     </span>
