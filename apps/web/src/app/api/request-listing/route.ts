@@ -17,8 +17,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Invalid email address' }, { status: 400 })
     }
 
-    const validTiers = ['free', 'premium', 'sponsored']
-    const safeTier = validTiers.includes(tier) ? tier : 'free'
+    const validTiers = ['premium', 'sponsored']
+    const safeTier = validTiers.includes(tier) ? tier : 'premium'
 
     const db = getDb()
     await db.insert(listingRequests).values({
@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
       contactEmail,
       contactPhone: contactPhone || null,
       businessWebsite: businessWebsite || null,
-      tier: safeTier as 'free' | 'premium' | 'sponsored',
+      tier: safeTier as 'premium' | 'sponsored',
       message: message || null,
     })
 

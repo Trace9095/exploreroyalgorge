@@ -36,6 +36,10 @@ export const claimSubmissions = pgTable('claim_submissions', {
   contactPhone: text('contact_phone'),
   tier: text('tier').notNull(), // premium | sponsored
   stripeSessionId: text('stripe_session_id'),
+  stripeCustomerId: text('stripe_customer_id'),
+  stripeSubscriptionId: text('stripe_subscription_id'),
+  subscriptionStatus: text('subscription_status'), // active | past_due | cancelled | trialing
+  currentPeriodEnd: timestamp('current_period_end'),
   status: text('status').notNull().default('pending'), // pending | paid | cancelled
   createdAt: timestamp('created_at').notNull().defaultNow(),
 })
