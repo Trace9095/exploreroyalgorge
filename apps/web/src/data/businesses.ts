@@ -40,6 +40,7 @@ export const BUSINESSES: Business[] = [
     claimed: true,
     featured: true,
     ownedByTrace: true,
+    imageUrl: '/images/businesses/rgr-hero.jpg',
     highlights: [
       'Class III–V rapids through the Royal Gorge',
       'Full-day, half-day, and multi-day trips',
@@ -70,6 +71,7 @@ export const BUSINESSES: Business[] = [
     claimed: true,
     featured: true,
     ownedByTrace: true,
+    imageUrl: '/images/businesses/rgzt-hero.jpg',
     highlights: [
       'Suspended 1,300 feet above the Arkansas River',
       'Multiple zip lines up to 50 mph',
@@ -100,6 +102,7 @@ export const BUSINESSES: Business[] = [
     claimed: true,
     featured: true,
     ownedByTrace: true,
+    imageUrl: '/images/businesses/rgvr-airstream.jpg',
     highlights: [
       'Riverside yurts with panoramic canyon views',
       'Restored vintage Airstream trailers',
@@ -130,6 +133,7 @@ export const BUSINESSES: Business[] = [
     claimed: true,
     featured: true,
     ownedByTrace: true,
+    imageUrl: '/images/businesses/rgea-hero.jpg',
     highlights: [
       'Multi-activity adventure packages',
       'Local expert guides and staff',
@@ -160,6 +164,7 @@ export const BUSINESSES: Business[] = [
     claimed: true,
     featured: true,
     ownedByTrace: true,
+    imageUrl: '/images/businesses/wwbg-patio.jpg',
     highlights: [
       'Full-service bar and kitchen',
       'Seasonal Colorado-inspired menu',
@@ -195,6 +200,7 @@ export const BUSINESSES: Business[] = [
     claimed: true,
     featured: true,
     ownedByTrace: true,
+    imageUrl: '/images/businesses/rt-hero.webp',
     highlights: [
       'Downtown Canon City rooftop setting',
       'Craft cocktail program',

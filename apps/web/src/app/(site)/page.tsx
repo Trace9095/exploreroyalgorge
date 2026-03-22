@@ -1,3 +1,5 @@
+import type React from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import {
   ArrowRight,
@@ -220,6 +222,25 @@ function PartnerSection({ partners }: { partners: ReturnType<typeof getOwnedBusi
                       'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212,168,83,0.18) 0%, transparent 60%)',
                   }}
                 />
+
+                {/* Hero image */}
+                {business.imageUrl && (
+                  <div className="relative h-44 w-full overflow-hidden">
+                    <Image
+                      src={business.imageUrl}
+                      alt={business.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover"
+                      quality={90}
+                    />
+                    <div
+                      className="pointer-events-none absolute inset-x-0 bottom-0 h-12"
+                      aria-hidden="true"
+                      style={{ background: 'linear-gradient(to bottom, transparent, rgba(13,17,23,0.6))' }}
+                    />
+                  </div>
+                )}
 
                 <div className="relative flex flex-1 flex-col p-6">
                   {/* Header */}

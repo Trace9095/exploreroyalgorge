@@ -1,15 +1,60 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { BUSINESSES, getBusinessesByCategory } from '@/data/businesses'
 import { CATEGORY_LABELS } from '@erg/shared'
 import type { BusinessCategory } from '@erg/shared'
-import { ArrowRight, Globe, Phone, CheckCircle, MapPin, Award, ArrowLeft } from 'lucide-react'
+import {
+  ArrowRight,
+  Globe,
+  Phone,
+  CheckCircle,
+  MapPin,
+  Award,
+  ArrowLeft,
+  Waves,
+  Wind,
+  Mountain,
+  Radio,
+  Eye,
+  Tent,
+  UtensilsCrossed,
+  Home,
+  Train,
+} from 'lucide-react'
 import { BookDirectBanner } from '@/components/marketing/BookDirectBanner'
+import type { ReactNode } from 'react'
 
 const ALL_CATEGORIES = Object.keys(CATEGORY_LABELS) as BusinessCategory[]
 
-export async function generateStaticParams() {
+const CATEGORY_GRADIENTS: Record<BusinessCategory, string> = {
+  rafting: 'linear-gradient(135deg, #0c1a2e 0%, #1a3a5c 100%)',
+  zipline: 'linear-gradient(135deg, #1a0d2e 0%, #2d1b5c 100%)',
+  hiking: 'linear-gradient(135deg, #0d1a0d 0%, #1a3a1a 100%)',
+  'rock-climbing': 'linear-gradient(135deg, #1a0d0d 0%, #3a1a1a 100%)',
+  helicopter: 'linear-gradient(135deg, #0d1117 0%, #111827 100%)',
+  scenic: 'linear-gradient(135deg, #1a1500 0%, #2d2500 100%)',
+  camping: 'linear-gradient(135deg, #0d1a0d 0%, #1a2d1a 100%)',
+  dining: 'linear-gradient(135deg, #1a0d0d 0%, #2d1500 100%)',
+  'vacation-rentals': 'linear-gradient(135deg, #0d1a1a 0%, #1a2d2d 100%)',
+  railroad: 'linear-gradient(135deg, #1a1a0d 0%, #2d2d1a 100%)',
+}
+
+const CATEGORY_ICON_MAP: Record<BusinessCategory, ReactNode> = {
+  rafting: <Waves className="h-16 w-16" />,
+  zipline: <Wind className="h-16 w-16" />,
+  hiking: <Mountain className="h-16 w-16" />,
+  'rock-climbing': <Mountain className="h-16 w-16" />,
+  helicopter: <Radio className="h-16 w-16" />,
+  scenic: <Eye className="h-16 w-16" />,
+  camping: <Tent className="h-16 w-16" />,
+  dining: <UtensilsCrossed className="h-16 w-16" />,
+  'vacation-rentals': <Home className="h-16 w-16" />,
+  railroad: <Train className="h-16 w-16" />,
+}
+
+export function generateStaticParams() {
   return ALL_CATEGORIES.map((category) => ({ category }))
 }
 
@@ -65,21 +110,54 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
           {sorted.map((business) => (
             <article
               key={business.slug}
-              className={`group relative overflow-hidden rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-0.5 ${
+              className={`group relative overflow-hidden rounded-2xl border transition-all duration-300 hover:-translate-y-0.5 ${
                 business.tier === 'sponsored'
                   ? 'border-gold/30 bg-surface hover:border-gold/50 hover:shadow-[0_4px_24px_rgba(212,168,83,0.12)]'
                   : 'border-border bg-surface hover:border-gold/20 hover:bg-surface-hover'
               }`}
             >
+              {/* Sponsored glow overlay */}
               {business.tier === 'sponsored' && (
                 <div
-                  className="pointer-events-none absolute inset-0 opacity-30"
+                  className="pointer-events-none absolute inset-0 z-[1] opacity-20"
                   aria-hidden="true"
-                  style={{ background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212,168,83,0.2) 0%, transparent 60%)' }}
+                  style={{
+                    background:
+                      'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212,168,83,0.25) 0%, transparent 60%)',
+                  }}
                 />
               )}
 
-              <div className="relative space-y-3">
+              {/* Image / Gradient fallback */}
+              <div className="relative h-44 w-full overflow-hidden">
+                {business.imageUrl ? (
+                  <Image
+                    src={business.imageUrl}
+                    alt={business.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    quality={90}
+                  />
+                ) : (
+                  <div
+                    className="flex h-full items-center justify-center"
+                    style={{ background: CATEGORY_GRADIENTS[business.category] }}
+                    aria-hidden="true"
+                  >
+                    <span className="text-gold/25">{CATEGORY_ICON_MAP[business.category]}</span>
+                  </div>
+                )}
+                {/* Bottom fade */}
+                <div
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-12"
+                  aria-hidden="true"
+                  style={{ background: 'linear-gradient(to bottom, transparent, rgba(13,17,23,0.6))' }}
+                />
+              </div>
+
+              {/* Card content */}
+              <div className="relative z-[2] space-y-3 p-5">
                 <div className="flex flex-wrap items-center gap-2">
                   {business.ownedByTrace && (
                     <span className="inline-flex items-center gap-1 rounded-full border border-gold/40 bg-gold/15 px-2.5 py-0.5 text-xs font-semibold text-gold">
