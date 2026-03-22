@@ -237,7 +237,7 @@ function PartnerSection({ partners }: { partners: ReturnType<typeof getOwnedBusi
                     <div
                       className="pointer-events-none absolute inset-x-0 bottom-0 h-12"
                       aria-hidden="true"
-                      style={{ background: 'linear-gradient(to bottom, transparent, rgba(13,17,23,0.6))' }}
+                      style={{ background: 'linear-gradient(to bottom, transparent, rgba(13,17,23,0.25))' }}
                     />
                   </div>
                 )}
