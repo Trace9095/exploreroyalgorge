@@ -212,34 +212,6 @@ export const BUSINESSES: Business[] = [
     latitude: 38.4396,
     longitude: -105.2358,
   },
-  {
-    slug: 'the-edge-zip',
-    name: 'The Edge Zip',
-    tagline: 'Extreme zipline experiences above the Royal Gorge',
-    description:
-      'The Edge Zip delivers some of the most exhilarating zipline experiences in Colorado. Featuring high-speed lines with breathtaking views of the Royal Gorge landscape, this adventure operation is built for thrill-seekers. The full course offers multiple zip lines with varying speeds and heights — each more spectacular than the last.',
-    category: 'zipline',
-    address: 'Canon City, CO 81212',
-    city: 'Canon City',
-    state: 'CO',
-    zip: '81212',
-    website: 'https://theedgezip.com',
-    tier: 'premium',
-    claimed: false,
-    featured: false,
-    ownedByTrace: false,
-    highlights: [
-      'High-speed ziplines with canyon views',
-      'Multiple course options',
-      'Expert safety-certified guides',
-      'Stunning Royal Gorge panoramas',
-      'Group and private bookings',
-    ],
-    hours: { 'May–Oct': 'Daily 9am–5pm' },
-    latitude: 38.4500,
-    longitude: -105.3300,
-  },
-
   // ── NON-OWNED BUSINESSES (Free tier — eligible for Claim) ─────────────
 
   {
