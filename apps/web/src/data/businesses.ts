@@ -94,7 +94,6 @@ export const BUSINESSES: Business[] = [
     city: 'Parkdale',
     state: 'CO',
     zip: '81220',
-    phone: '(719) 275-3113',
     website: 'https://royalgorgevacationrentals.com',
     tier: 'sponsored',
     claimed: true,
@@ -124,7 +123,6 @@ export const BUSINESSES: Business[] = [
     city: 'Canon City',
     state: 'CO',
     zip: '81212',
-    phone: '(719) 275-2700',
     website: 'https://royalgorgeepicadventures.com',
     tier: 'sponsored',
     claimed: true,
@@ -146,9 +144,9 @@ export const BUSINESSES: Business[] = [
   {
     slug: 'whitewater-bar-grill',
     name: 'WhiteWater Bar & Grill',
-    tagline: 'Riverside dining in the heart of Canon City',
+    tagline: 'Undefeated flavors and legendary portions on Hwy 50',
     description:
-      'WhiteWater Bar & Grill brings Colorado comfort food and craft cocktails to the Arkansas River corridor. Known for its lively atmosphere, locally-sourced menu, and stunning views, WWBG is the go-to spot for celebrating a day on the river or simply enjoying Canon City at its best. Live events, seasonal menus, and a full bar await.',
+      'WhiteWater Bar & Grill is the go-to dining destination on Highway 50 in Canon City. Known for its legendary portions, craft cocktails, lively atmosphere, and locally-sourced Colorado menu — WWBG is the perfect way to celebrate a day of adventure or simply enjoy the best food in Fremont County. Live events, seasonal menus, and a full bar await.',
     category: 'dining',
     address: '45045 Hwy 50 West, Canon City, CO 81212',
     city: 'Canon City',
@@ -227,7 +225,7 @@ export const BUSINESSES: Business[] = [
     tier: 'sponsored',
     claimed: true,
     featured: false,
-    ownedByTrace: true,
+    ownedByTrace: false,
     highlights: [
       'High-speed ziplines with canyon views',
       'Multiple course options',
