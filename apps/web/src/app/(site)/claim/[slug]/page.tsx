@@ -3,6 +3,7 @@
 import { useState, use } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, CheckCircle, Star } from 'lucide-react'
+import { trackEvent } from '@/lib/analytics'
 
 const TIERS = [
   {
@@ -58,7 +59,10 @@ export default function ClaimPage({ params }: { params: Promise<{ slug: string }
         throw new Error(json.error ?? 'Failed to start checkout')
       }
       const { url } = await res.json()
-      if (url) window.location.href = url
+      if (url) {
+        trackEvent('claim_listing', { tier: selectedTier, city: 'Royal Gorge' })
+        window.location.href = url
+      }
     } catch (err) {
       setStatus('error')
       setErrorMsg(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
