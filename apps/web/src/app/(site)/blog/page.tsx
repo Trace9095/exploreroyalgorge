@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BLOG_POSTS } from '@/data/blog'
 import { ArrowRight, Clock } from 'lucide-react'
+import { BookDirectBanner } from '@/components/marketing/BookDirectBanner'
 
 export const metadata: Metadata = {
   title: 'Blog & Travel Guides',
@@ -58,6 +59,8 @@ export default function BlogPage() {
             </Link>
           ))}
         </div>
+
+        <BookDirectBanner />
       </div>
     </div>
   )

@@ -5,6 +5,7 @@ import { BUSINESSES, getBusinessesByCategory } from '@/data/businesses'
 import { CATEGORY_LABELS } from '@erg/shared'
 import type { BusinessCategory } from '@erg/shared'
 import { ArrowRight, Globe, Phone, CheckCircle, MapPin, Star, ArrowLeft } from 'lucide-react'
+import { BookDirectBanner } from '@/components/marketing/BookDirectBanner'
 
 const ALL_CATEGORIES = Object.keys(CATEGORY_LABELS) as BusinessCategory[]
 
@@ -156,8 +157,10 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
           ))}
         </div>
 
+        <BookDirectBanner />
+
         {/* CTA */}
-        <div className="mt-16 rounded-2xl border border-border bg-surface p-8 text-center">
+        <div className="mt-4 rounded-2xl border border-border bg-surface p-8 text-center">
           <h2 className="text-xl font-bold text-foreground">Don&apos;t see your business?</h2>
           <p className="mt-2 text-muted">Submit your listing and we&apos;ll add it within 1–2 business days.</p>
           <Link

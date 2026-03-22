@@ -4,6 +4,7 @@ import { BUSINESSES } from '@/data/businesses'
 import { CATEGORY_LABELS } from '@erg/shared'
 import type { BusinessCategory } from '@erg/shared'
 import { ArrowRight, Star, Globe, Phone, CheckCircle, MapPin } from 'lucide-react'
+import { BookDirectBanner } from '@/components/marketing/BookDirectBanner'
 
 export const metadata: Metadata = {
   title: 'Adventure Directory',
@@ -173,8 +174,10 @@ export default function DirectoryPage({
           ))}
         </div>
 
+        <BookDirectBanner />
+
         {/* Don't see yours */}
-        <div className="mt-16 rounded-2xl border border-border bg-surface p-8 text-center">
+        <div className="mt-4 rounded-2xl border border-border bg-surface p-8 text-center">
           <h2 className="text-xl font-bold text-foreground">Don&apos;t see your business?</h2>
           <p className="mt-2 text-muted">
             We&apos;re always expanding the directory. Submit your listing and we&apos;ll add it within 1–2 business days.

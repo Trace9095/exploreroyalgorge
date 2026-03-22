@@ -18,6 +18,7 @@ import {
   Award,
   Zap,
 } from 'lucide-react'
+import { BookDirectBanner } from '@/components/marketing/BookDirectBanner'
 
 export async function generateStaticParams() {
   return BUSINESSES.map((b) => ({ slug: b.slug }))
@@ -727,8 +728,10 @@ function StandardPage({
             </div>
           </div>
 
+          <BookDirectBanner />
+
           {related.length > 0 && (
-            <section className="mt-16" aria-label="Related businesses">
+            <section className="mt-4" aria-label="Related businesses">
               <h2 className="mb-6 text-2xl font-bold text-foreground">More {categoryLabel} in the Royal Gorge</h2>
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {related.map((b) => (

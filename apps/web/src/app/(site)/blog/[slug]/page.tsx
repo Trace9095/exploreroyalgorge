@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { BLOG_POSTS, getBlogPostBySlug } from '@/data/blog'
 import type { BlogBlock } from '@erg/shared'
 import { ArrowLeft, Clock, Calendar } from 'lucide-react'
+import { BookDirectBanner } from '@/components/marketing/BookDirectBanner'
 
 export async function generateStaticParams() {
   return BLOG_POSTS.map((p) => ({ slug: p.slug }))
@@ -110,7 +111,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           )}
         </article>
 
-        <div className="mt-16 rounded-2xl border border-gold/20 bg-gold/5 p-8 text-center">
+        <BookDirectBanner />
+
+        <div className="mt-4 rounded-2xl border border-gold/20 bg-gold/5 p-8 text-center">
           <h2 className="text-xl font-bold text-foreground">Ready to explore the Royal Gorge?</h2>
           <p className="mt-2 text-muted">
             Browse all adventures, book tours, and discover what&apos;s waiting in Canon City, Colorado.
