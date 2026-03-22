@@ -7,8 +7,8 @@ let _db: NeonHttpDatabase<typeof schema> | null = null
 
 export function getDb(): NeonHttpDatabase<typeof schema> {
   if (!_db) {
-    const DATABASE_URL = process.env['DATABASE_URL']
-    if (!DATABASE_URL) throw new Error('DATABASE_URL is not set')
+    const DATABASE_URL = process.env['DATABASE_URL'] ?? process.env['POSTGRES_DATABASE_URL']
+    if (!DATABASE_URL) throw new Error('DATABASE_URL is not set. Add Neon Storage to this project in the Vercel dashboard.')
     _db = drizzle(neon(DATABASE_URL), { schema })
   }
   return _db
