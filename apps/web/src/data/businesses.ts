@@ -1,5 +1,25 @@
 import type { Business } from '@erg/shared'
 
+// Logo paths (public/logos/) for Trace-owned partner businesses
+export const PARTNER_LOGOS: Record<string, string> = {
+  'royal-gorge-rafting': '/logos/logo-rgr.svg',
+  'royal-gorge-zipline-tours': '/logos/logo-rgzt.svg',
+  'royal-gorge-vacation-rentals': '/logos/logo-rgvr.svg',
+  'royal-gorge-epic-adventures': '/logos/logo-rgea.svg',
+  'whitewater-bar-grill': '/logos/logo-wwbg.svg',
+  'ww-rooftop-social': '/logos/logo-rt.svg',
+}
+
+// Book Now CTA labels per category
+export const PARTNER_CTA_LABELS: Record<string, string> = {
+  'royal-gorge-rafting': 'Book Your Rafting Trip',
+  'royal-gorge-zipline-tours': 'Book Zipline Tours',
+  'royal-gorge-vacation-rentals': 'Browse Rentals',
+  'royal-gorge-epic-adventures': 'Plan Your Adventure',
+  'whitewater-bar-grill': 'View Menu & Reserve',
+  'ww-rooftop-social': 'Reserve Your Table',
+}
+
 export const BUSINESSES: Business[] = [
   // ── TRACE'S BUSINESSES (Sponsored / Featured / Owned) ─────────────────
 
@@ -14,7 +34,7 @@ export const BUSINESSES: Business[] = [
     city: 'Canon City',
     state: 'CO',
     zip: '81212',
-    phone: '(719) 275-5161',
+    phone: '(719) 275-7238',
     website: 'https://royalgorgerafting.net',
     tier: 'sponsored',
     claimed: true,
@@ -44,7 +64,7 @@ export const BUSINESSES: Business[] = [
     city: 'Canon City',
     state: 'CO',
     zip: '81212',
-    phone: '(719) 275-7507',
+    phone: '(719) 275-7238',
     website: 'https://royalgorgeziplinetours.com',
     tier: 'sponsored',
     claimed: true,
@@ -130,11 +150,11 @@ export const BUSINESSES: Business[] = [
     description:
       'WhiteWater Bar & Grill brings Colorado comfort food and craft cocktails to the Arkansas River corridor. Known for its lively atmosphere, locally-sourced menu, and stunning views, WWBG is the go-to spot for celebrating a day on the river or simply enjoying Canon City at its best. Live events, seasonal menus, and a full bar await.',
     category: 'dining',
-    address: 'Canon City, CO 81212',
+    address: '45045 Hwy 50 West, Canon City, CO 81212',
     city: 'Canon City',
     state: 'CO',
     zip: '81212',
-    phone: '(719) 275-4500',
+    phone: '(719) 269-1009',
     website: 'https://whitewaterbar.com',
     tier: 'sponsored',
     claimed: true,
@@ -169,7 +189,7 @@ export const BUSINESSES: Business[] = [
     city: 'Canon City',
     state: 'CO',
     zip: '81212',
-    phone: '(719) 275-1200',
+    phone: '(719) 451-7241',
     website: 'https://wwrooftopsocial.com',
     tier: 'sponsored',
     claimed: true,
@@ -235,7 +255,7 @@ export const BUSINESSES: Business[] = [
     zip: '81212',
     phone: '(719) 275-7507',
     website: 'https://royalgorgebridge.com',
-    tier: 'free',
+    tier: 'premium',
     claimed: false,
     featured: false,
     ownedByTrace: false,
@@ -265,7 +285,7 @@ export const BUSINESSES: Business[] = [
     zip: '81212',
     phone: '(888) 724-5748',
     website: 'https://royalgorgeroute.com',
-    tier: 'free',
+    tier: 'premium',
     claimed: false,
     featured: false,
     ownedByTrace: false,
@@ -295,7 +315,7 @@ export const BUSINESSES: Business[] = [
     zip: '81212',
     phone: '(719) 275-9000',
     website: 'https://royalgorgehelitours.com',
-    tier: 'free',
+    tier: 'premium',
     claimed: false,
     featured: false,
     ownedByTrace: false,
@@ -324,7 +344,7 @@ export const BUSINESSES: Business[] = [
     state: 'CO',
     zip: '81212',
     website: 'https://canoncity.org/red-canyon-park',
-    tier: 'free',
+    tier: 'premium',
     claimed: false,
     featured: false,
     ownedByTrace: false,
@@ -352,7 +372,7 @@ export const BUSINESSES: Business[] = [
     state: 'CO',
     zip: '81212',
     website: 'https://www.blm.gov/visit/shelf-road',
-    tier: 'free',
+    tier: 'premium',
     claimed: false,
     featured: false,
     ownedByTrace: false,
@@ -379,7 +399,7 @@ export const BUSINESSES: Business[] = [
     city: 'Canon City',
     state: 'CO',
     zip: '81212',
-    tier: 'free',
+    tier: 'premium',
     claimed: false,
     featured: false,
     ownedByTrace: false,
@@ -408,7 +428,7 @@ export const BUSINESSES: Business[] = [
     zip: '81212',
     phone: '(719) 275-6116',
     website: 'https://koa.com/campgrounds/royal-gorge',
-    tier: 'free',
+    tier: 'premium',
     claimed: false,
     featured: false,
     ownedByTrace: false,
@@ -436,7 +456,7 @@ export const BUSINESSES: Business[] = [
     city: 'Canon City',
     state: 'CO',
     zip: '81212',
-    tier: 'free',
+    tier: 'premium',
     claimed: false,
     featured: false,
     ownedByTrace: false,
@@ -465,7 +485,7 @@ export const BUSINESSES: Business[] = [
     zip: '81212',
     phone: '(719) 276-5310',
     website: 'https://buckskinjoes.com',
-    tier: 'free',
+    tier: 'premium',
     claimed: false,
     featured: false,
     ownedByTrace: false,
@@ -494,7 +514,7 @@ export const BUSINESSES: Business[] = [
     state: 'CO',
     zip: '81212',
     website: 'https://www.blm.gov/visit/garden-park-fossil-area',
-    tier: 'free',
+    tier: 'premium',
     claimed: false,
     featured: false,
     ownedByTrace: false,
@@ -531,4 +551,8 @@ export function getFeaturedBusinesses(): Business[] {
 
 export function getUnclaimedBusinesses(): Business[] {
   return BUSINESSES.filter((b) => !b.claimed)
+}
+
+export function getOwnedBusinesses(): Business[] {
+  return BUSINESSES.filter((b) => b.ownedByTrace)
 }

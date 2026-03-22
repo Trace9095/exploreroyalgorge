@@ -15,8 +15,11 @@ import {
   MapPin,
   ChevronRight,
   CheckCircle,
+  Phone,
+  ExternalLink,
+  Award,
 } from 'lucide-react'
-import { getFeaturedBusinesses, getBusinessesByCategory } from '@/data/businesses'
+import { getFeaturedBusinesses, getBusinessesByCategory, getOwnedBusinesses, PARTNER_CTA_LABELS } from '@/data/businesses'
 import { getLatestBlogPosts } from '@/data/blog'
 import type { BusinessCategory } from '@erg/shared'
 import { CATEGORY_LABELS } from '@erg/shared'
@@ -39,11 +42,13 @@ export default function HomePage() {
   const recentPosts = getLatestBlogPosts(3)
   const raftingCount = getBusinessesByCategory('rafting').length
   const totalListings = 18
+  const partners = getOwnedBusinesses()
 
   return (
     <div className="bg-background">
       <Hero />
       <StatsBar totalListings={totalListings} raftingCount={raftingCount} />
+      <PartnerSection partners={partners} />
       <CategoryGrid />
       <FeaturedSection featured={featured} />
       <BlogSection posts={recentPosts} />
@@ -168,6 +173,130 @@ function StatsBar({ totalListings, raftingCount }: { totalListings: number; raft
               <div className="mt-1 text-xs text-muted uppercase tracking-wider">{stat.label}</div>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ─── Partner Section ──────────────────────────────────────────────────────
+
+function PartnerSection({ partners }: { partners: ReturnType<typeof getOwnedBusinesses> }) {
+  return (
+    <section className="border-t border-border py-20 px-4">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-12 text-center">
+          <div className="mb-4 flex justify-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-semibold text-gold uppercase tracking-widest">
+              <Award className="h-3 w-3" aria-hidden="true" />
+              Book Direct
+            </span>
+          </div>
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Featured Adventures — Book Direct
+          </h2>
+          <p className="mt-4 mx-auto max-w-2xl text-lg text-muted">
+            Skip the middleman. Book directly with the Royal Gorge region&apos;s premier adventure
+            operators — local experts with decades of experience.
+          </p>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {partners.map((business) => {
+            const ctaLabel = PARTNER_CTA_LABELS[business.slug] ?? 'Book Now'
+            return (
+              <div
+                key={business.slug}
+                className="relative overflow-hidden rounded-2xl border border-gold/25 bg-surface flex flex-col"
+              >
+                {/* Gold shimmer top border */}
+                <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
+                {/* Subtle radial glow */}
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-25"
+                  aria-hidden="true"
+                  style={{
+                    background:
+                      'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212,168,83,0.18) 0%, transparent 60%)',
+                  }}
+                />
+
+                <div className="relative flex flex-1 flex-col p-6">
+                  {/* Header */}
+                  <div className="mb-4 flex items-start justify-between gap-2">
+                    <div>
+                      <span className="inline-flex items-center gap-1 rounded-full border border-gold/35 bg-gold/15 px-2.5 py-0.5 text-xs font-semibold text-gold capitalize">
+                        <Star className="h-2.5 w-2.5 fill-gold" aria-hidden="true" />
+                        Featured Partner
+                      </span>
+                    </div>
+                    <span className="shrink-0 text-xs text-muted capitalize">
+                      {business.category.replace('-', ' ')}
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg font-bold text-foreground">{business.name}</h3>
+                  <p className="mt-1 text-sm text-muted">{business.tagline}</p>
+
+                  {/* Top highlight */}
+                  {business.highlights[0] && (
+                    <div className="mt-3 flex items-start gap-2 text-xs text-muted">
+                      <CheckCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold" aria-hidden="true" />
+                      {business.highlights[0]}
+                    </div>
+                  )}
+                  {business.highlights[1] && (
+                    <div className="mt-1.5 flex items-start gap-2 text-xs text-muted">
+                      <CheckCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold" aria-hidden="true" />
+                      {business.highlights[1]}
+                    </div>
+                  )}
+
+                  {/* Address */}
+                  {business.address && (
+                    <div className="mt-3 flex items-start gap-1.5 text-xs text-muted">
+                      <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-muted/60" aria-hidden="true" />
+                      {business.address}
+                    </div>
+                  )}
+
+                  <div className="mt-auto pt-5 space-y-2">
+                    {/* Primary CTA */}
+                    <a
+                      href={business.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-background transition-opacity hover:opacity-90"
+                      style={{ background: '#D4A853' }}
+                    >
+                      {ctaLabel}
+                      <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                    </a>
+
+                    {/* Phone + listing link row */}
+                    <div className="flex gap-2">
+                      {business.phone && (
+                        <a
+                          href={`tel:${business.phone.replace(/\D/g, '')}`}
+                          className="inline-flex min-h-[40px] flex-1 items-center justify-center gap-1.5 rounded-xl border border-border bg-background/60 px-3 py-2 text-xs font-medium text-muted transition-colors hover:border-gold/30 hover:text-foreground"
+                        >
+                          <Phone className="h-3.5 w-3.5" aria-hidden="true" />
+                          {business.phone}
+                        </a>
+                      )}
+                      <Link
+                        href={`/directory/${business.slug}`}
+                        className="inline-flex min-h-[40px] items-center justify-center gap-1 rounded-xl border border-border bg-background/60 px-3 py-2 text-xs font-medium text-muted transition-colors hover:border-gold/30 hover:text-foreground"
+                      >
+                        Details
+                        <ChevronRight className="h-3 w-3" aria-hidden="true" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>

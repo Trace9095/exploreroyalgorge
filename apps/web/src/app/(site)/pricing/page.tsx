@@ -5,7 +5,7 @@ import { CheckCircle, ArrowRight, Star } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Listing Pricing — Get Featured in the Royal Gorge Directory',
   description:
-    'Choose a listing plan for your Royal Gorge area business. Free basic listings, Premium featured placement at $99/mo, and Sponsored top positioning at $199/mo.',
+    'Choose a listing plan for your Royal Gorge area business. Premium featured placement at $99/mo, or Sponsored top positioning at $199/mo.',
   openGraph: {
     title: 'Royal Gorge Directory — Listing Plans & Pricing',
     description: 'Get your business featured in the Royal Gorge adventure directory.',
@@ -14,27 +14,13 @@ export const metadata: Metadata = {
 
 const PLANS = [
   {
-    name: 'Free',
-    price: null,
-    description: 'Basic listing in the directory',
-    tier: 'free',
-    features: [
-      'Business name, category & description',
-      'Address and phone number',
-      'Link to your website',
-      'Listed in directory search',
-    ],
-    cta: 'Request Free Listing',
-    href: '/request-listing',
-    highlighted: false,
-  },
-  {
     name: 'Premium',
     price: 99,
     description: 'Enhanced listing with priority placement',
     tier: 'premium',
     features: [
-      'Everything in Free',
+      'Business name, category & description',
+      'Address, phone number & website link',
       'Priority placement in category pages',
       'Highlights & amenities showcase',
       'Hours of operation display',
@@ -76,13 +62,13 @@ export default function PricingPage() {
             Get Your Business Found
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
-            Thousands of visitors search for Royal Gorge adventures every month. Make sure they find your
-            business first.
+            Thousands of visitors search for Royal Gorge adventures every month. Starting at $99/mo — no long-term
+            contracts, cancel anytime.
           </p>
         </div>
 
         {/* Pricing grid */}
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="mx-auto grid max-w-3xl gap-6 md:grid-cols-2">
           {PLANS.map((plan) => (
             <div
               key={plan.name}
@@ -155,7 +141,7 @@ export default function PricingPage() {
             {[
               {
                 q: 'How long does listing approval take?',
-                a: 'Basic listings are reviewed and added within 1–2 business days. Premium and Sponsored upgrades are activated immediately after payment.',
+                a: 'New listings are reviewed and activated within 1–2 business days after payment. You\'ll receive a confirmation email once your listing is live.',
               },
               {
                 q: 'Can I cancel anytime?',
@@ -163,7 +149,7 @@ export default function PricingPage() {
               },
               {
                 q: 'What happens to my listing if I cancel?',
-                a: 'Your listing remains in the directory on the Free plan — no data is lost. You can upgrade again at any time.',
+                a: 'Your listing will be removed from the directory when your subscription ends. Reactivate anytime by resubscribing — all your listing data is preserved.',
               },
               {
                 q: 'Do you offer annual billing?',

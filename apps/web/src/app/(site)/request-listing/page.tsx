@@ -153,9 +153,8 @@ export default function RequestListingPage() {
                 id="tier"
                 name="tier"
                 className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:border-gold/40 focus:outline-none focus:ring-2 focus:ring-gold/20"
-                defaultValue="free"
+                defaultValue="premium"
               >
-                <option value="free">Free</option>
                 <option value="premium">Premium — $99/mo</option>
                 <option value="sponsored">Sponsored — $199/mo</option>
               </select>
@@ -192,7 +191,7 @@ export default function RequestListingPage() {
           </button>
 
           <p className="text-center text-xs text-muted">
-            Free listings are added within 1–2 business days. No credit card required for the Free plan.
+            Listings are reviewed and activated within 1–2 business days. Secure checkout powered by Stripe.
           </p>
         </form>
       </div>

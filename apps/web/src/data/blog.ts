@@ -27,9 +27,16 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: 'h2', text: 'Best Time to Visit from Denver' },
       { type: 'p', text: 'The Royal Gorge is spectacular year-round, but the best conditions for outdoor activities are May through September. Rafting season peaks June–August when snowmelt keeps the Arkansas River running strong. Spring (April–May) and fall (September–October) offer cooler temperatures and fewer crowds.' },
       { type: 'h2', text: 'Where to Eat in Canon City' },
-      { type: 'p', text: 'After a day of adventure, refuel at WW Rooftop Social (302 Royal Gorge Blvd) for craft cocktails and Colorado comfort food with mountain views. WhiteWater Bar & Grill is another local favorite for post-rafting celebrations.' },
+      { type: 'p', text: 'After a day of adventure, refuel at WW Rooftop Social (302 Royal Gorge Blvd, (719) 451-7241) for craft cocktails and Colorado comfort food with panoramic mountain views from downtown Canon City. WhiteWater Bar & Grill (45045 Hwy 50 West, (719) 269-1009) is the go-to for post-rafting celebrations — open for lunch and dinner Tuesday through Sunday.' },
+      { type: 'h2', text: 'Book Your Royal Gorge Adventures' },
+      { type: 'ul', items: [
+        'Whitewater Rafting — Royal Gorge Rafting: royalgorgerafting.net | (719) 275-7238 | Half and full-day trips, April–September',
+        'Zipline Tours — Royal Gorge Zipline Tours: royalgorgeziplinetours.com | (719) 275-7238 | Classic and Extreme courses, May–September',
+        'Glamping & Rentals — Royal Gorge Vacation Rentals: royalgorgevacationrentals.com | Yurts, Airstreams, and cabins year-round',
+        'Multi-Adventure Packages — Royal Gorge Epic Adventures: royalgorgeepicadventures.com | Custom itineraries for groups and families',
+      ]},
       { type: 'h2', text: 'Overnight or Day Trip?' },
-      { type: 'p', text: 'While the Royal Gorge is absolutely doable as a day trip from Denver, the area rewards a longer stay. Consider booking a night at Royal Gorge Vacation Rentals — yurts, Airstreams, and riverside cabins let you experience the canyon in a whole new way.' },
+      { type: 'p', text: 'While the Royal Gorge is absolutely doable as a day trip from Denver, the area rewards a longer stay. Book a night at Royal Gorge Vacation Rentals (royalgorgevacationrentals.com) — riverside yurts, vintage Airstreams, and canyon cabins let you experience the gorge in a completely different way. Wake up steps from the Arkansas River and start your next adventure immediately.' },
     ],
   },
   {
@@ -96,6 +103,13 @@ export const BLOG_POSTS: BlogPost[] = [
       ]},
       { type: 'h2', text: 'Planning Your Trip from Pueblo' },
       { type: 'p', text: 'Book rafting trips in advance during peak season (July–August) — Royal Gorge Rafting fills up weeks ahead on weekends. Midweek trips are easier to book and often less crowded. The Bighorn Sheep Canyon section can be booked same-day during slower periods.' },
+      { type: 'h2', text: 'Book Direct with Royal Gorge Outfitters' },
+      { type: 'ul', items: [
+        'Royal Gorge Rafting — (719) 275-7238 | royalgorgerafting.net | Half-day, full-day, and overnight trips. Open April–September.',
+        'Royal Gorge Zipline Tours — (719) 275-7238 | royalgorgeziplinetours.com | 1,300-foot-high ziplines above the Arkansas River.',
+        'Royal Gorge Vacation Rentals — royalgorgevacationrentals.com | Stay riverside in yurts, Airstreams, or canyon cabins.',
+        'Dining — WhiteWater Bar & Grill, (719) 269-1009, 45045 Hwy 50 West, Canon City — perfect post-rafting stop on the drive back to Pueblo.',
+      ]},
     ],
   },
   {
