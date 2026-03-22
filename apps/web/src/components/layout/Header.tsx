@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Mountain, Search } from 'lucide-react'
+import { Menu, X, Search } from 'lucide-react'
+import { CanyonMark } from '@/components/ui/CanyonMark'
 
 const NAV_LINKS = [
   { label: 'Adventures', href: '/adventures' },
@@ -26,7 +27,7 @@ export function Header() {
             style={{ background: '#D4A853', boxShadow: '0 0 12px rgba(212,168,83,0.4)' }}
             aria-hidden="true"
           >
-            <Mountain className="h-4 w-4 text-background" />
+            <CanyonMark size={16} />
           </div>
           <div className="hidden sm:block">
             <span className="text-base font-bold tracking-tight text-foreground">Explore Royal Gorge</span>

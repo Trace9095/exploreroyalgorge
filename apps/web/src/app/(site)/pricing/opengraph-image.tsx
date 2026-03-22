@@ -21,7 +21,7 @@ export default function OgImage() {
             Get Your Business Found
           </div>
           <div style={{ fontSize: 20, color: '#8B949E', textAlign: 'center', maxWidth: 600 }}>
-            Free · Premium $99/mo · Sponsored $199/mo
+            Premium $99/mo · Sponsored $199/mo — no contracts
           </div>
           <div style={{ display: 'flex', gap: 12, marginTop: 8 }}>
             {['No contracts', 'Cancel anytime', 'Same-day setup'].map(tag => (

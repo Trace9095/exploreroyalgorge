@@ -11,24 +11,47 @@ export default function Icon() {
         style={{
           width: 32,
           height: 32,
-          background: '#D4A853',
-          borderRadius: 8,
+          background: '#0D1117',
+          borderRadius: 7,
+          overflow: 'hidden',
           display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          position: 'relative',
         }}
       >
+        {/* Left canyon wall */}
         <div
           style={{
-            fontSize: 18,
-            fontWeight: 900,
-            color: '#0D1117',
-            fontFamily: 'sans-serif',
-            lineHeight: 1,
+            position: 'absolute',
+            left: 0,
+            top: 0,
+            width: 10,
+            height: 32,
+            background: '#D4A853',
           }}
-        >
-          E
-        </div>
+        />
+        {/* Right canyon wall */}
+        <div
+          style={{
+            position: 'absolute',
+            right: 0,
+            top: 0,
+            width: 10,
+            height: 32,
+            background: '#D4A853',
+          }}
+        />
+        {/* Bridge */}
+        <div
+          style={{
+            position: 'absolute',
+            left: 9,
+            top: 9,
+            width: 14,
+            height: 2,
+            background: '#D4A853',
+            borderRadius: 1,
+          }}
+        />
       </div>
     ),
     { ...size },
