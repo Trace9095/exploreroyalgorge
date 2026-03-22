@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
 
     await Promise.allSettled([
       sendListingRequestNotification({ businessName, contactName, contactEmail, tier: safeTier }),
-      sendListingRequestConfirmation({ businessName, contactName, contactEmail }),
+      sendListingRequestConfirmation({ businessName, contactName, contactEmail, tier: safeTier }),
     ])
 
     return NextResponse.json({ ok: true })

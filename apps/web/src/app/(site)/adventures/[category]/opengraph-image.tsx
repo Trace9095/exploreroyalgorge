@@ -7,11 +7,6 @@ export const runtime = 'edge'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
-const ALL_CATEGORIES = Object.keys(CATEGORY_LABELS) as BusinessCategory[]
-
-export async function generateStaticParams() {
-  return ALL_CATEGORIES.map((category) => ({ category }))
-}
 
 export default async function OgImage({ params }: { params: Promise<{ category: string }> }) {
   const { category } = await params

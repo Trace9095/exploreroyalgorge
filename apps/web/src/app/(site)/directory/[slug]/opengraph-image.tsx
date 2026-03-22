@@ -1,14 +1,11 @@
 import { ImageResponse } from 'next/og'
-import { BUSINESSES, getBusinessBySlug } from '@/data/businesses'
+import { getBusinessBySlug } from '@/data/businesses'
 import { CATEGORY_LABELS } from '@erg/shared'
 
 export const runtime = 'edge'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
-export async function generateStaticParams() {
-  return BUSINESSES.map((b) => ({ slug: b.slug }))
-}
 
 export default async function OgImage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
