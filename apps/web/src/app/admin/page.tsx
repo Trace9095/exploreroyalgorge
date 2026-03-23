@@ -65,7 +65,7 @@ export default async function AdminPage() {
           {[
             { label: 'Sponsored', count: sponsored, color: '#D4A853' },
             { label: 'Premium', count: premium, color: '#D4A853' },
-            { label: 'Free', count: BUSINESSES.length - sponsored - premium, color: '#6E7681' },
+            { label: 'Unclaimed', count: BUSINESSES.length - sponsored - premium, color: '#6E7681' },
           ].map(({ label, count: c, color }) => (
             <div key={label} className="flex items-center justify-between">
               <div className="flex items-center gap-3">

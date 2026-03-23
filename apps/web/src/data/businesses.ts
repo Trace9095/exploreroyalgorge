@@ -218,7 +218,7 @@ export const BUSINESSES: Business[] = [
     latitude: 38.4396,
     longitude: -105.2358,
   },
-  // ── NON-OWNED BUSINESSES (Free tier — eligible for Claim) ─────────────
+  // ── NON-OWNED BUSINESSES (Unclaimed — eligible for Claim at $99/mo+) ─────────────
 
   {
     slug: 'royal-gorge-bridge-park',

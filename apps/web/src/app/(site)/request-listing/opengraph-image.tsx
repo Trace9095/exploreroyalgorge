@@ -24,7 +24,7 @@ export default function OgImage() {
             Reach thousands of adventure-seekers visiting the Royal Gorge region
           </div>
           <div style={{ display: 'flex', gap: 12, marginTop: 8 }}>
-            {['Free listing', '1–2 day approval', 'No long-term contracts'].map(tag => (
+            {['From $99/mo', '1-2 day approval', 'No long-term contracts'].map(tag => (
               <div key={tag} style={{ padding: '6px 16px', background: 'rgba(212,168,83,0.15)', border: '1px solid rgba(212,168,83,0.3)', borderRadius: 100, fontSize: 13, color: '#D4A853', fontWeight: 600 }}>{tag}</div>
             ))}
           </div>
