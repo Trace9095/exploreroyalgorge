@@ -76,10 +76,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
       </head>
       <body className={`${GeistSans.variable} ${GeistMono.variable} bg-background text-foreground antialiased`}>
-        <a href="#main-content" className="skip-link">
+        <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>
-        {children}
+        <main id="main-content">{children}</main>
         <Analytics />
         <SpeedInsights />
       </body>
