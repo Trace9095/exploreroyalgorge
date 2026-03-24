@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${APP_URL}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${APP_URL}/pricing`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${APP_URL}/request-listing`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${APP_URL}/manage`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.4 },
   ]
 
   const categoryRoutes: MetadataRoute.Sitemap = ADVENTURE_CATEGORIES.map((cat) => ({

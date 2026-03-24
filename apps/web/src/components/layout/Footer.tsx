@@ -72,6 +72,24 @@ export function Footer() {
           ))}
         </div>
 
+        {/* Also Explore — Royal Gorge Region */}
+        <div className="pb-6">
+          <p className="text-[#6B7280] text-xs uppercase tracking-wider font-medium mb-3">
+            Also Explore the Royal Gorge Region
+          </p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <a href="https://gorgetourism.com" target="_blank" rel="noopener noreferrer" className="text-[#8B949E] text-sm hover:text-[#D4A853] transition-colors">
+              Gorge Tourism
+            </a>
+            <a href="https://royalgorge.org" target="_blank" rel="noopener noreferrer" className="text-[#8B949E] text-sm hover:text-[#D4A853] transition-colors">
+              Royal Gorge Guide
+            </a>
+            <a href="https://visitcanoncity.net" target="_blank" rel="noopener noreferrer" className="text-[#8B949E] text-sm hover:text-[#D4A853] transition-colors">
+              Visit Canon City
+            </a>
+          </div>
+        </div>
+
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center gap-4 border-t border-border pt-8 sm:flex-row sm:justify-between">
           <p className="text-xs text-muted">
