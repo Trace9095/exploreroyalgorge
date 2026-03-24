@@ -34,10 +34,16 @@ export const metadata: Metadata = {
     siteName: 'Explore Royal Gorge',
     locale: 'en_US',
     url: APP_URL,
+    title: 'Explore Royal Gorge — Canon City, Colorado Adventure Directory',
+    description: 'The Royal Gorge adventure directory — rafting, ziplines, hiking, rock climbing, helicopter tours, camping, and more near Canon City, Colorado.',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Explore Royal Gorge' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@exploreroyalgorge',
+    title: 'Explore Royal Gorge — Canon City, Colorado Adventure Directory',
+    description: 'Rafting, ziplines, hiking, rock climbing, helicopter tours, and more near Canon City, Colorado.',
+    images: ['/opengraph-image'],
   },
   robots: {
     index: true,
