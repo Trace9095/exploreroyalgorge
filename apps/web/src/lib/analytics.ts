@@ -2,7 +2,7 @@ import { track } from '@vercel/analytics'
 
 // Directory site analytics — dual pipeline: Vercel Analytics + GA4
 
-function gaEvent(eventName: string, params?: Record<string, unknown>) {
+function gaEvent(eventName: string, params?: Record<string, string | number | boolean>) {
   if (typeof window === 'undefined') return
   const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag
   if (gtag) {
@@ -73,11 +73,6 @@ export function trackPhoneCall(source: string) {
 export function trackExternalLink(name: string, url: string) {
   track('external_link', { name, url })
   gaEvent('external_link', { link_name: name, link_url: url })
-}
-
-export function trackEvent(eventName: string, params?: Record<string, unknown>) {
-  track(eventName, params as Record<string, string>)
-  gaEvent(eventName, params)
 }
 
 export function trackScrollDepth(depth: number, page: string) {
