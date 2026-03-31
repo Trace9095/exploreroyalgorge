@@ -75,6 +75,11 @@ export function trackExternalLink(name: string, url: string) {
   gaEvent('external_link', { link_name: name, link_url: url })
 }
 
+export function trackEvent(eventName: string, params?: Record<string, unknown>) {
+  track(eventName, params as Record<string, string>)
+  gaEvent(eventName, params)
+}
+
 export function trackScrollDepth(depth: number, page: string) {
   track('scroll_depth', { depth: String(depth), page })
   gaEvent('scroll_depth', { scroll_percentage: depth, page_path: page })
